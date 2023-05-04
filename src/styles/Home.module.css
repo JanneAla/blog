@@ -41,9 +41,14 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(25%, auto));
+  grid-template-columns: repeat(3, minmax(30%, auto));
   width: var(--max-width);
   max-width: 100%;
+}
+
+.grid a {
+  color: white; 
+  text-decoration: none;
 }
 
 .card {

@@ -1,0 +1,32 @@
+.container {
+    max-width: 48rem;
+    padding: 0 1rem;
+    margin: 3rem auto 6rem;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.backToHome {
+    margin: 3rem 0 0;
+}
+
+.container :is(h1, h2, h3, h4, h5, h6) {
+    margin: 1rem 0;
+}
+.container img {
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.container pre:has(code) {
+    background-color: rgb(60,60,60);
+    border-radius: 8px;
+    margin: 1rem 0;
+    padding: 2rem;
+    width: 100%
+}
+
