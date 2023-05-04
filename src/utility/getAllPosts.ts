@@ -16,15 +16,15 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const fullPath = join(postsDirectory, `${realSlug}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
   const { data, content } = matter(fileContents)
-  
-  const converter = new Converter({ 
+
+  const converter = new Converter({
     openLinksInNewWindow: true,
-    simpleLineBreaks: true 
+    simpleLineBreaks: true
   })
 
   converter.setFlavor('github') // original, vanilla, github
   const html = converter.makeHtml(content)
-  
+
   type Items = {
     [key: string]: string
   }
@@ -71,7 +71,7 @@ export function getAllPostIds() {
 export function getSortedPostsData() {
   // Get file names under /posts
   const fileNames = fs.readdirSync(postsDirectory)
-  const allPostsData = fileNames.map(fileName => {
+  const allPostsData = fileNames.map((fileName): {[key: string]: string} => {
     // Remove ".md" from file name to get id
     const slug = fileName.replace(/\.md$/, '')
 
@@ -81,6 +81,7 @@ export function getSortedPostsData() {
 
     // Use gray-matter to parse the post metadata section
     const matterResult = matter(fileContents)
+    console.log({ matterResult })
 
     // Combine the data with the id
     return {
@@ -88,6 +89,7 @@ export function getSortedPostsData() {
       ...matterResult.data
     }
   })
+  
   // Sort posts by date
   return allPostsData.sort((a, b) => {
     if (a.date < b.date) {
