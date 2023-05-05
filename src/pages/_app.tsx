@@ -1,3 +1,4 @@
+import Footer from '@/components/footer/footer'
 import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Inter, Ubuntu } from 'next/font/google'
@@ -14,5 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
         }
       `}</style>
       <Component {...pageProps} />
-    </>)
+      <Footer />
+    </>
+    )
 }

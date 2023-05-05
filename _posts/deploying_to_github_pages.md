@@ -13,10 +13,14 @@ Vaatimukset
 - Github tili
 - Github repo johon on puskettu jokin projekti kuten tämä nextjs sivu
 
-Valmistelus
+Valmistelut
 -----------
 On hyvä testata että kaikki toimii buildaus vaiheesse eikä sittenkun pitäisi ola verkkosivu pystyssä ja näkyy vain 404 sivu. Oma nilkka kolahti showdown paketin types tiedoostojen puuttumiseen mutta onneksi npm on tarpeeksi viisas ja osaa ehdottaa oikeata komentoa jolla vika saatiin korjattua. Tämän jälkeen ongelma olikin yhden function tiedon palautus tyypin määrittelemättä jättäminen ja tarkemmin ottaen mitä typescript oletti sen palauttavan. Tämä oli `getSortedPostsData` functiossa oleva map joka oletti string arrayn palauttavan samanlaisen takaisin mutta palautettiinkin objekti joten täytyi käydä määrittelemässä tämä tieto sinne ja ongelmat katosivat.
 
 Github Actions
 --------------
 Tämä oli aika lailla paina ok kaikkeen prosessi. Kun mainitsin tämän olevan aika virtaviivaista niin ainut oman pään käyttö oli oikean Github Actionsin valinta mutta sekään ei tuottanut ongelmia.
+
+Lopputulos
+----------
+Github actions tekee omien verkkosivujen julkaisusta hyvin kivuttoman prosessin niin kauan kun oman frameworkin löytää valmiiksi tehtyjen github actionsien listalta.

@@ -18,9 +18,8 @@ export default function Home({ allPosts }: Props) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-
         <header className={styles.description}>
-          <title>Header</title>
+          <h2>Header</h2>
         </header>
 
         <div className={styles.grid}>

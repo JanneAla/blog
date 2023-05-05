@@ -16,8 +16,6 @@ export default function PostCard({ post }: Props) {
             <img
                 src={post.coverImage}
                 alt={post.title || "alt text"}
-                width="100%"
-                height="auto"
             />
             <h2>
                 {post.title} <span>-&gt;</span>
